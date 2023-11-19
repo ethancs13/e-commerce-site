@@ -30,8 +30,19 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Product data
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   // create a new tag
+  try {
+    const dbCatData = await Tag.create({
+      id: req.body.id,
+      tag_name: req.body.tag_name_name,
+    })
+
+      res.status(200).json(dbCatData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.put('/:id', (req, res) => {
