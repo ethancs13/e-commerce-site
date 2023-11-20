@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
       tag_name: req.body.tag_name_name,
     })
 
-      res.status(200).json(dbCatData);
+    res.status(200).json(dbCatData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -71,6 +71,22 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
+
+  try {
+    Tag.destroy({
+      where: {
+        id: req.params.id
+      },
+    })
+      .then((deletedTag) => {
+        res.status(200).json(deletedTag);
+      })
+      .catch((err) => {
+        res.status(500).json(err);
+      })
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
