@@ -29,14 +29,16 @@ Product.init(
       defaultValue: 10,
       validate: {
         is: /^[0-9]+$/,
-      }
+      },
+      freezeTableName: true,
     },
     category_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'category',
         key: 'id'
-      }
+      },
+      freezeTableName: true,
     }
     // define columns
   },

@@ -18,13 +18,15 @@ ProductTag.init(
         model: 'product',
         key: 'id'
       },
+      freezeTableName: true,
     },
     tag_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'tag',
         key: 'id'
-      }
+      },
+      freezeTableName: true,
     }
     // define columns
   },

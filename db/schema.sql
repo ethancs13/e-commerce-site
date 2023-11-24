@@ -6,32 +6,32 @@ CREATE DATABASE ecommerce_db;
 
 USE ecommerce_db;
 
-CREATE TABLE category (
+CREATE TABLE Category (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     category_name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE product (
+CREATE TABLE Product (
     id INT AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     stock INT NOT NULL DEFAULT 10,
     category_id INT,
     FOREIGN KEY (category_id)
-    REFERENCES category(id)
+    REFERENCES Category(id)
 );
 
-CREATE TABLE tag (
+CREATE TABLE Tag (
     id INT AUTO_INCREMENT PRIMARY KEY,
     tag_name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE product_tag (
+CREATE TABLE Product_Tag (
     id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT NOT NULL,
     tag_id INT NOT NULL,
     FOREIGN KEY (product_id)
-    REFERENCES product(id),
+    REFERENCES Product(id),
     FOREIGN KEY (tag_id)
-    REFERENCES tag(id)
+    REFERENCES Tag(id)
 );
