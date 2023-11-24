@@ -31,6 +31,14 @@ Use mysql to create a databse using the db/schema.sql file. Then use the command
 
 If you want to run your own local instance, follow the installation instructions included in this document.
 
+### Tutorial Videos
+
+#### Setup and Seed Database
+[![Watch the video](https://d2uolguxr56s4e.cloudfront.net/img/kartrapages/video_player_placeholder.gif)](./videos/ServerSeed.mp4)
+
+#### Insomnia Routes Testing
+[![Watch the video](https://d2uolguxr56s4e.cloudfront.net/img/kartrapages/video_player_placeholder.gif)](./videos/Insomnia.mp4)
+
 
 ### Prerequisites 📂
 You will need `node` installed on your computer in order to run this app.
@@ -42,10 +50,6 @@ npm i
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<a name="testing" id="testing"></a>
-## Testing 🔍
-* 
 
 
 ## Built With 🌱
